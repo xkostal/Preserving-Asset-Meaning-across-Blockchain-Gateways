@@ -1,0 +1,4394 @@
+[
+  {
+    "name": "valid-different-decimals",
+    "group": "valid",
+    "expected": "ACCEPT",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000000000000000,
+        "decimals": 18,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": true
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": true,
+        "legal_recognition": true,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": true,
+        "finalized": true,
+        "observed_at": 10,
+        "max_age": 50
+      },
+      "source_frozen": false,
+      "jurisdiction_compatible": true
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 1,
+      "revoked_mappings": [],
+      "revoked_authorities": []
+    }
+  },
+  {
+    "name": "valid-same-decimals",
+    "group": "valid",
+    "expected": "ACCEPT",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": true
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": true,
+        "legal_recognition": true,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": true,
+        "finalized": true,
+        "observed_at": 10,
+        "max_age": 50
+      },
+      "source_frozen": false,
+      "jurisdiction_compatible": true
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 1,
+      "revoked_mappings": [],
+      "revoked_authorities": []
+    }
+  },
+  {
+    "name": "valid-property-certificate",
+    "group": "valid",
+    "expected": "ACCEPT",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "property-certificate",
+        "raw_amount": 1,
+        "decimals": 0,
+        "rights": [
+          "hold-certificate",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke",
+          "correction"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "property-certificate",
+        "raw_amount": 1,
+        "decimals": 0,
+        "rights": [
+          "hold-certificate",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke",
+          "correction"
+        ],
+        "expires_at": 1000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "property-certificate",
+        "target_class": "property-certificate",
+        "required_rights": [
+          "hold-certificate",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "hold-certificate",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke",
+          "correction"
+        ],
+        "operation": "migration",
+        "approved": true
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": true,
+        "legal_recognition": true,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": true,
+        "finalized": true,
+        "observed_at": 10,
+        "max_age": 50
+      },
+      "source_frozen": false,
+      "jurisdiction_compatible": true
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 1,
+      "revoked_mappings": [],
+      "revoked_authorities": []
+    }
+  },
+  {
+    "name": "valid-exact-fraction",
+    "group": "valid",
+    "expected": "ACCEPT",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1234000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1234000000000000000,
+        "decimals": 18,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": true
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": true,
+        "legal_recognition": true,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": true,
+        "finalized": true,
+        "observed_at": 10,
+        "max_age": 50
+      },
+      "source_frozen": false,
+      "jurisdiction_compatible": true
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 1,
+      "revoked_mappings": [],
+      "revoked_authorities": []
+    }
+  },
+  {
+    "name": "negative-quantity",
+    "group": "syntax",
+    "expected": "REJECT",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": -1,
+        "decimals": 18,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": true
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": true,
+        "legal_recognition": true,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": true,
+        "finalized": true,
+        "observed_at": 10,
+        "max_age": 50
+      },
+      "source_frozen": false,
+      "jurisdiction_compatible": true
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 1,
+      "revoked_mappings": [],
+      "revoked_authorities": []
+    }
+  },
+  {
+    "name": "noninteger-quantity",
+    "group": "syntax",
+    "expected": "REJECT",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1.5,
+        "decimals": 18,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": true
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": true,
+        "legal_recognition": true,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": true,
+        "finalized": true,
+        "observed_at": 10,
+        "max_age": 50
+      },
+      "source_frozen": false,
+      "jurisdiction_compatible": true
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 1,
+      "revoked_mappings": [],
+      "revoked_authorities": []
+    }
+  },
+  {
+    "name": "unsupported-decimals",
+    "group": "syntax",
+    "expected": "REJECT",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000000000000000,
+        "decimals": 37,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": true
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": true,
+        "legal_recognition": true,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": true,
+        "finalized": true,
+        "observed_at": 10,
+        "max_age": 50
+      },
+      "source_frozen": false,
+      "jurisdiction_compatible": true
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 1,
+      "revoked_mappings": [],
+      "revoked_authorities": []
+    }
+  },
+  {
+    "name": "missing-context",
+    "group": "syntax",
+    "expected": "REJECT",
+    "context": {
+      "context_id": "",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000000000000000,
+        "decimals": 18,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": true
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": true,
+        "legal_recognition": true,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": true,
+        "finalized": true,
+        "observed_at": 10,
+        "max_age": 50
+      },
+      "source_frozen": false,
+      "jurisdiction_compatible": true
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 1,
+      "revoked_mappings": [],
+      "revoked_authorities": []
+    }
+  },
+  {
+    "name": "wrong-source-locator",
+    "group": "semantic",
+    "expected": "REJECT",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "other-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000000000000000,
+        "decimals": 18,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": true
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": true,
+        "legal_recognition": true,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": true,
+        "finalized": true,
+        "observed_at": 10,
+        "max_age": 50
+      },
+      "source_frozen": false,
+      "jurisdiction_compatible": true
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 1,
+      "revoked_mappings": [],
+      "revoked_authorities": []
+    }
+  },
+  {
+    "name": "wrong-target-locator",
+    "group": "semantic",
+    "expected": "REJECT",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "other-asset",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000000000000000,
+        "decimals": 18,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": true
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": true,
+        "legal_recognition": true,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": true,
+        "finalized": true,
+        "observed_at": 10,
+        "max_age": 50
+      },
+      "source_frozen": false,
+      "jurisdiction_compatible": true
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 1,
+      "revoked_mappings": [],
+      "revoked_authorities": []
+    }
+  },
+  {
+    "name": "same-symbol-different-claim",
+    "group": "semantic",
+    "expected": "REJECT",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "issuer-Y:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000000000000000,
+        "decimals": 18,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": true
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": true,
+        "legal_recognition": true,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": true,
+        "finalized": true,
+        "observed_at": 10,
+        "max_age": 50
+      },
+      "source_frozen": false,
+      "jurisdiction_compatible": true
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 1,
+      "revoked_mappings": [],
+      "revoked_authorities": []
+    }
+  },
+  {
+    "name": "both-claims-substituted",
+    "group": "semantic",
+    "expected": "REJECT",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "forged-claim",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "forged-claim",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000000000000000,
+        "decimals": 18,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": true
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": true,
+        "legal_recognition": true,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": true,
+        "finalized": true,
+        "observed_at": 10,
+        "max_age": 50
+      },
+      "source_frozen": false,
+      "jurisdiction_compatible": true
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 1,
+      "revoked_mappings": [],
+      "revoked_authorities": []
+    }
+  },
+  {
+    "name": "issuer-substitution",
+    "group": "semantic",
+    "expected": "REJECT",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-Y",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000000000000000,
+        "decimals": 18,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": true
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": true,
+        "legal_recognition": true,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": true,
+        "finalized": true,
+        "observed_at": 10,
+        "max_age": 50
+      },
+      "source_frozen": false,
+      "jurisdiction_compatible": true
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 1,
+      "revoked_mappings": [],
+      "revoked_authorities": []
+    }
+  },
+  {
+    "name": "certificate-promoted-to-title",
+    "group": "semantic",
+    "expected": "REJECT",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "legal-title",
+        "raw_amount": 1000000000000000000,
+        "decimals": 18,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": true
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": true,
+        "legal_recognition": true,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": true,
+        "finalized": true,
+        "observed_at": 10,
+        "max_age": 50
+      },
+      "source_frozen": false,
+      "jurisdiction_compatible": true
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 1,
+      "revoked_mappings": [],
+      "revoked_authorities": []
+    }
+  },
+  {
+    "name": "quantity-rounding",
+    "group": "semantic",
+    "expected": "REJECT",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 999999999999999999,
+        "decimals": 18,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": true
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": true,
+        "legal_recognition": true,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": true,
+        "finalized": true,
+        "observed_at": 10,
+        "max_age": 50
+      },
+      "source_frozen": false,
+      "jurisdiction_compatible": true
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 1,
+      "revoked_mappings": [],
+      "revoked_authorities": []
+    }
+  },
+  {
+    "name": "redemption-lost",
+    "group": "semantic",
+    "expected": "REJECT",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000000000000000,
+        "decimals": 18,
+        "rights": [
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": true
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": true,
+        "legal_recognition": true,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": true,
+        "finalized": true,
+        "observed_at": 10,
+        "max_age": 50
+      },
+      "source_frozen": false,
+      "jurisdiction_compatible": true
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 1,
+      "revoked_mappings": [],
+      "revoked_authorities": []
+    }
+  },
+  {
+    "name": "new-right-added",
+    "group": "semantic",
+    "expected": "REJECT",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000000000000000,
+        "decimals": 18,
+        "rights": [
+          "redeem",
+          "transfer",
+          "fractionalize"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": true
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": true,
+        "legal_recognition": true,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": true,
+        "finalized": true,
+        "observed_at": 10,
+        "max_age": 50
+      },
+      "source_frozen": false,
+      "jurisdiction_compatible": true
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 1,
+      "revoked_mappings": [],
+      "revoked_authorities": []
+    }
+  },
+  {
+    "name": "freeze-capability-lost",
+    "group": "semantic",
+    "expected": "REJECT",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000000000000000,
+        "decimals": 18,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": true
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": true,
+        "legal_recognition": true,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": true,
+        "finalized": true,
+        "observed_at": 10,
+        "max_age": 50
+      },
+      "source_frozen": false,
+      "jurisdiction_compatible": true
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 1,
+      "revoked_mappings": [],
+      "revoked_authorities": []
+    }
+  },
+  {
+    "name": "revocation-capability-lost",
+    "group": "semantic",
+    "expected": "REJECT",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000000000000000,
+        "decimals": 18,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze"
+        ],
+        "expires_at": 1000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": true
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": true,
+        "legal_recognition": true,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": true,
+        "finalized": true,
+        "observed_at": 10,
+        "max_age": 50
+      },
+      "source_frozen": false,
+      "jurisdiction_compatible": true
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 1,
+      "revoked_mappings": [],
+      "revoked_authorities": []
+    }
+  },
+  {
+    "name": "expiry-extended",
+    "group": "semantic",
+    "expected": "REJECT",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000000000000000,
+        "decimals": 18,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 2000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": true
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": true,
+        "legal_recognition": true,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": true,
+        "finalized": true,
+        "observed_at": 10,
+        "max_age": 50
+      },
+      "source_frozen": false,
+      "jurisdiction_compatible": true
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 1,
+      "revoked_mappings": [],
+      "revoked_authorities": []
+    }
+  },
+  {
+    "name": "migration-changed-to-wrapping",
+    "group": "semantic",
+    "expected": "REJECT",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000000000000000,
+        "decimals": 18,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": true
+      },
+      "operation": "wrapping",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": true,
+        "legal_recognition": true,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": true,
+        "finalized": true,
+        "observed_at": 10,
+        "max_age": 50
+      },
+      "source_frozen": false,
+      "jurisdiction_compatible": true
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 1,
+      "revoked_mappings": [],
+      "revoked_authorities": []
+    }
+  },
+  {
+    "name": "mapping-not-approved",
+    "group": "institutional",
+    "expected": "REJECT",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000000000000000,
+        "decimals": 18,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": false
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": true,
+        "legal_recognition": true,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": true,
+        "finalized": true,
+        "observed_at": 10,
+        "max_age": 50
+      },
+      "source_frozen": false,
+      "jurisdiction_compatible": true
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 1,
+      "revoked_mappings": [],
+      "revoked_authorities": []
+    }
+  },
+  {
+    "name": "mapping-approval-unavailable",
+    "group": "institutional",
+    "expected": "DEFER",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000000000000000,
+        "decimals": 18,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": null
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": true,
+        "legal_recognition": true,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": true,
+        "finalized": true,
+        "observed_at": 10,
+        "max_age": 50
+      },
+      "source_frozen": false,
+      "jurisdiction_compatible": true
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 1,
+      "revoked_mappings": [],
+      "revoked_authorities": []
+    }
+  },
+  {
+    "name": "mapping-revoked",
+    "group": "institutional",
+    "expected": "REJECT",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000000000000000,
+        "decimals": 18,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": true
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": true,
+        "legal_recognition": true,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": true,
+        "finalized": true,
+        "observed_at": 10,
+        "max_age": 50
+      },
+      "source_frozen": false,
+      "jurisdiction_compatible": true
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 1,
+      "revoked_mappings": [
+        "mapping-1"
+      ],
+      "revoked_authorities": []
+    }
+  },
+  {
+    "name": "policy-version-changed",
+    "group": "temporal",
+    "expected": "DEFER",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000000000000000,
+        "decimals": 18,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": true
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": true,
+        "legal_recognition": true,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": true,
+        "finalized": true,
+        "observed_at": 10,
+        "max_age": 50
+      },
+      "source_frozen": false,
+      "jurisdiction_compatible": true
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 2,
+      "revoked_mappings": [],
+      "revoked_authorities": []
+    }
+  },
+  {
+    "name": "issuer-authorization-denied",
+    "group": "institutional",
+    "expected": "REJECT",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000000000000000,
+        "decimals": 18,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": true
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": false,
+        "recipient_eligibility": true,
+        "legal_recognition": true,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": true,
+        "finalized": true,
+        "observed_at": 10,
+        "max_age": 50
+      },
+      "source_frozen": false,
+      "jurisdiction_compatible": true
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 1,
+      "revoked_mappings": [],
+      "revoked_authorities": []
+    }
+  },
+  {
+    "name": "recipient-status-unknown",
+    "group": "institutional",
+    "expected": "DEFER",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000000000000000,
+        "decimals": 18,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": true
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": null,
+        "legal_recognition": true,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": true,
+        "finalized": true,
+        "observed_at": 10,
+        "max_age": 50
+      },
+      "source_frozen": false,
+      "jurisdiction_compatible": true
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 1,
+      "revoked_mappings": [],
+      "revoked_authorities": []
+    }
+  },
+  {
+    "name": "legal-recognition-pending",
+    "group": "institutional",
+    "expected": "DEFER",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000000000000000,
+        "decimals": 18,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": true
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": true,
+        "legal_recognition": null,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": true,
+        "finalized": true,
+        "observed_at": 10,
+        "max_age": 50
+      },
+      "source_frozen": false,
+      "jurisdiction_compatible": true
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 1,
+      "revoked_mappings": [],
+      "revoked_authorities": []
+    }
+  },
+  {
+    "name": "legal-recognition-denied",
+    "group": "institutional",
+    "expected": "REJECT",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000000000000000,
+        "decimals": 18,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": true
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": true,
+        "legal_recognition": false,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": true,
+        "finalized": true,
+        "observed_at": 10,
+        "max_age": 50
+      },
+      "source_frozen": false,
+      "jurisdiction_compatible": true
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 1,
+      "revoked_mappings": [],
+      "revoked_authorities": []
+    }
+  },
+  {
+    "name": "delegation-out-of-scope",
+    "group": "institutional",
+    "expected": "REJECT",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000000000000000,
+        "decimals": 18,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": true
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": true,
+        "legal_recognition": true,
+        "delegation_scope": false
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": true,
+        "finalized": true,
+        "observed_at": 10,
+        "max_age": 50
+      },
+      "source_frozen": false,
+      "jurisdiction_compatible": true
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 1,
+      "revoked_mappings": [],
+      "revoked_authorities": []
+    }
+  },
+  {
+    "name": "authority-revoked",
+    "group": "institutional",
+    "expected": "REJECT",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000000000000000,
+        "decimals": 18,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": true
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": true,
+        "legal_recognition": true,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": true,
+        "finalized": true,
+        "observed_at": 10,
+        "max_age": 50
+      },
+      "source_frozen": false,
+      "jurisdiction_compatible": true
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 1,
+      "revoked_mappings": [],
+      "revoked_authorities": [
+        "authority-1"
+      ]
+    }
+  },
+  {
+    "name": "approval-expired",
+    "group": "temporal",
+    "expected": "DEFER",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000000000000000,
+        "decimals": 18,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": true
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": true,
+        "legal_recognition": true,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 15,
+      "evidence": {
+        "authenticated": true,
+        "finalized": true,
+        "observed_at": 10,
+        "max_age": 50
+      },
+      "source_frozen": false,
+      "jurisdiction_compatible": true
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 1,
+      "revoked_mappings": [],
+      "revoked_authorities": []
+    }
+  },
+  {
+    "name": "underlying-asset-expired",
+    "group": "temporal",
+    "expected": "REJECT",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 15
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000000000000000,
+        "decimals": 18,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 15
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": true
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": true,
+        "legal_recognition": true,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": true,
+        "finalized": true,
+        "observed_at": 10,
+        "max_age": 50
+      },
+      "source_frozen": false,
+      "jurisdiction_compatible": true
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 1,
+      "revoked_mappings": [],
+      "revoked_authorities": []
+    }
+  },
+  {
+    "name": "fabricated-root-assertion",
+    "group": "evidence",
+    "expected": "REJECT",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000000000000000,
+        "decimals": 18,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": true
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": true,
+        "legal_recognition": true,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": false,
+        "finalized": true,
+        "observed_at": 10,
+        "max_age": 50
+      },
+      "source_frozen": false,
+      "jurisdiction_compatible": true
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 1,
+      "revoked_mappings": [],
+      "revoked_authorities": []
+    }
+  },
+  {
+    "name": "source-not-finalized",
+    "group": "evidence",
+    "expected": "DEFER",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000000000000000,
+        "decimals": 18,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": true
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": true,
+        "legal_recognition": true,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": true,
+        "finalized": false,
+        "observed_at": 10,
+        "max_age": 50
+      },
+      "source_frozen": false,
+      "jurisdiction_compatible": true
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 1,
+      "revoked_mappings": [],
+      "revoked_authorities": []
+    }
+  },
+  {
+    "name": "evidence-too-old",
+    "group": "temporal",
+    "expected": "DEFER",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000000000000000,
+        "decimals": 18,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": true
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": true,
+        "legal_recognition": true,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": true,
+        "finalized": true,
+        "observed_at": -40,
+        "max_age": 50
+      },
+      "source_frozen": false,
+      "jurisdiction_compatible": true
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 1,
+      "revoked_mappings": [],
+      "revoked_authorities": []
+    }
+  },
+  {
+    "name": "observation-in-future",
+    "group": "temporal",
+    "expected": "REJECT",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000000000000000,
+        "decimals": 18,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": true
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": true,
+        "legal_recognition": true,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": true,
+        "finalized": true,
+        "observed_at": 30,
+        "max_age": 50
+      },
+      "source_frozen": false,
+      "jurisdiction_compatible": true
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 1,
+      "revoked_mappings": [],
+      "revoked_authorities": []
+    }
+  },
+  {
+    "name": "source-frozen",
+    "group": "institutional",
+    "expected": "REJECT",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000000000000000,
+        "decimals": 18,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": true
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": true,
+        "legal_recognition": true,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": true,
+        "finalized": true,
+        "observed_at": 10,
+        "max_age": 50
+      },
+      "source_frozen": true,
+      "jurisdiction_compatible": true
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 1,
+      "revoked_mappings": [],
+      "revoked_authorities": []
+    }
+  },
+  {
+    "name": "source-status-unavailable",
+    "group": "institutional",
+    "expected": "DEFER",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000000000000000,
+        "decimals": 18,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": true
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": true,
+        "legal_recognition": true,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": true,
+        "finalized": true,
+        "observed_at": 10,
+        "max_age": 50
+      },
+      "source_frozen": null,
+      "jurisdiction_compatible": true
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 1,
+      "revoked_mappings": [],
+      "revoked_authorities": []
+    }
+  },
+  {
+    "name": "jurisdiction-approval-pending",
+    "group": "institutional",
+    "expected": "DEFER",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000000000000000,
+        "decimals": 18,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": true
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": true,
+        "legal_recognition": true,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": true,
+        "finalized": true,
+        "observed_at": 10,
+        "max_age": 50
+      },
+      "source_frozen": false,
+      "jurisdiction_compatible": null
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 1,
+      "revoked_mappings": [],
+      "revoked_authorities": []
+    }
+  },
+  {
+    "name": "jurisdiction-approval-denied",
+    "group": "institutional",
+    "expected": "REJECT",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000000000000000,
+        "decimals": 18,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": true
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": true,
+        "legal_recognition": true,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": true,
+        "finalized": true,
+        "observed_at": 10,
+        "max_age": 50
+      },
+      "source_frozen": false,
+      "jurisdiction_compatible": false
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 1,
+      "revoked_mappings": [],
+      "revoked_authorities": []
+    }
+  },
+  {
+    "name": "known-loss-and-pending-approval",
+    "group": "combined",
+    "expected": "REJECT",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000000000000000,
+        "decimals": 18,
+        "rights": [
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": true
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": true,
+        "legal_recognition": null,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": true,
+        "finalized": true,
+        "observed_at": 10,
+        "max_age": 50
+      },
+      "source_frozen": false,
+      "jurisdiction_compatible": true
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 1,
+      "revoked_mappings": [],
+      "revoked_authorities": []
+    }
+  },
+  {
+    "name": "revoked-mapping-and-stale-policy",
+    "group": "combined",
+    "expected": "REJECT",
+    "context": {
+      "context_id": "context-1",
+      "source": {
+        "network": "network-A",
+        "contract": "issuer-vault",
+        "asset_id": "asset-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000,
+        "decimals": 6,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "target": {
+        "network": "network-B",
+        "contract": "certificate-ledger",
+        "asset_id": "representation-7",
+        "claim_id": "issuer-X:claim-7",
+        "issuer": "issuer-X",
+        "claim_class": "redeemable-unit",
+        "raw_amount": 1000000000000000000,
+        "decimals": 18,
+        "rights": [
+          "redeem",
+          "transfer"
+        ],
+        "controls": [
+          "freeze",
+          "revoke"
+        ],
+        "expires_at": 1000
+      },
+      "mapping": {
+        "id": "mapping-1",
+        "claim_id": "issuer-X:claim-7",
+        "source_locator": [
+          "network-A",
+          "issuer-vault",
+          "asset-7"
+        ],
+        "target_locator": [
+          "network-B",
+          "certificate-ledger",
+          "representation-7"
+        ],
+        "source_issuer": "issuer-X",
+        "target_issuer": "issuer-X",
+        "source_class": "redeemable-unit",
+        "target_class": "redeemable-unit",
+        "required_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "allowed_rights": [
+          "redeem",
+          "transfer"
+        ],
+        "required_controls": [
+          "freeze",
+          "revoke"
+        ],
+        "operation": "migration",
+        "approved": true
+      },
+      "operation": "migration",
+      "policy_version": 1,
+      "approvals": {
+        "issuer_authority": true,
+        "recipient_eligibility": true,
+        "legal_recognition": true,
+        "delegation_scope": true
+      },
+      "approval_authority": "authority-1",
+      "approval_valid_until": 100,
+      "evidence": {
+        "authenticated": true,
+        "finalized": true,
+        "observed_at": 10,
+        "max_age": 50
+      },
+      "source_frozen": false,
+      "jurisdiction_compatible": true
+    },
+    "world": {
+      "now": 20,
+      "policy_version": 2,
+      "revoked_mappings": [
+        "mapping-1"
+      ],
+      "revoked_authorities": []
+    }
+  }
+]

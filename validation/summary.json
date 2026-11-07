@@ -1,0 +1,87 @@
+{
+  "summary": [
+    {
+      "baseline": "syntax",
+      "cases": 43,
+      "matches": 8,
+      "unsupported_accepts": 35,
+      "valid_not_accepted": 0
+    },
+    {
+      "baseline": "semantic",
+      "cases": 43,
+      "matches": 22,
+      "unsupported_accepts": 21,
+      "valid_not_accepted": 0
+    },
+    {
+      "baseline": "full",
+      "cases": 43,
+      "matches": 43,
+      "unsupported_accepts": 0,
+      "valid_not_accepted": 0
+    }
+  ],
+  "traces": [
+    {
+      "name": "initial-reservation",
+      "actual": "ACCEPT",
+      "expected": "ACCEPT"
+    },
+    {
+      "name": "competing-reservation",
+      "actual": "REJECT",
+      "expected": "REJECT"
+    },
+    {
+      "name": "commit-existing-reservation",
+      "actual": "ACCEPT",
+      "expected": "ACCEPT"
+    },
+    {
+      "name": "duplicate-commit",
+      "actual": "REJECT",
+      "expected": "REJECT"
+    },
+    {
+      "name": "new-reservation-after-commit",
+      "actual": "REJECT",
+      "expected": "REJECT"
+    },
+    {
+      "name": "changed-context-at-commit",
+      "actual": "REJECT",
+      "expected": "REJECT"
+    },
+    {
+      "name": "original-context-after-failed-change",
+      "actual": "ACCEPT",
+      "expected": "ACCEPT"
+    },
+    {
+      "name": "policy-change-before-commit",
+      "actual": "DEFER",
+      "expected": "DEFER"
+    },
+    {
+      "name": "authority-revoked-before-commit",
+      "actual": "REJECT",
+      "expected": "REJECT"
+    },
+    {
+      "name": "approval-expired-before-commit",
+      "actual": "DEFER",
+      "expected": "DEFER"
+    },
+    {
+      "name": "asset-expired-before-commit",
+      "actual": "REJECT",
+      "expected": "REJECT"
+    },
+    {
+      "name": "commit-without-reservation",
+      "actual": "REJECT",
+      "expected": "REJECT"
+    }
+  ]
+}
